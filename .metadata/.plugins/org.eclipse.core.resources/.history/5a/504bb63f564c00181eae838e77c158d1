@@ -1,0 +1,9 @@
+$(function(){
+	var awarId=  getQueryString('awardId');
+	var productUrl = '/o2o/frontend/listAwarddetailpageinfo?awardId='
+		+ awarId;
+	
+	$.getJSON(productUrl,function(data){
+		var award = data.award;
+	});
+});

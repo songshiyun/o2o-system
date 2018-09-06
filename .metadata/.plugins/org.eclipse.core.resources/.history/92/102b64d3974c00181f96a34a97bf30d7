@@ -1,0 +1,32 @@
+$(function() {
+	getProductSellDailyList();
+	function getProductSellDailyList() {
+		// 获取该店铺商品7天销量的URL
+		var listProductSellDailyUrl = '/o2o/shopadmin/awardcirclechartinfo';
+		// 访问后台，该店铺商品7天销量的URL
+		$.getJSON(listProductSellDailyUrl, function(data) {
+			if (data.success) {
+				var myChart = echarts.init(document.getElementById('chart'));
+				// 生成静态的Echart信息的部分
+				var option = generateStaticEchartPart();
+				// 遍历销量统计列表,动态设定echarts的值
+				option.legend.data=data.legendData;
+				option.radiusAxis=data.xAxis;
+				option.series = data.series;
+				myChart.setOption(option);
+			}
+		});
+	}
+	function generateStaticEchartPart(){
+	var	option = {
+			    angleAxis: {},
+			    radiusAxis: {  
+			    },
+			    polar: {},
+			    series: [],
+			    legend: { }
+			};
+		return option;
+	}
+	
+});

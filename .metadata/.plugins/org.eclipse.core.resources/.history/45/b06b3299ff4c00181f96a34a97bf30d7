@@ -1,0 +1,7 @@
+package com.song.o2o.dto.echarts;
+
+public class PieLegend {
+	private String orient ="vertical";
+	private String x="right";
+	private List<String> data;
+}

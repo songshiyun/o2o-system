@@ -1,0 +1,59 @@
+$(function() {
+	getProductSellDailyList();
+	function getProductSellDailyList() {
+		// 获取该店铺商品7天销量的URL
+		var listProductSellDailyUrl = '/o2o/shopadmin/awardsteplineinfo';
+		// 访问后台，该店铺商品7天销量的URL
+		$.getJSON(listProductSellDailyUrl, function(data) {
+			if (data.success) {
+				var myChart = echarts.init(document.getElementById('container'));
+				// 生成静态的Echart信息的部分
+				var option = generateStaticEchartPart();
+				// 遍历销量统计列表,动态设定echarts的值
+				//option.legend.data=data.legendData;
+				//option.radiusAxis=data.xAxis;
+				//option.series = data.series;
+				myChart.setOption(option);
+			}
+		});
+	}
+	
+	function generateStaticEchartPart(){
+		var res={
+				"xAxis":[{"type":"category","data":["2018-04-25","2018-04-26","2018-04-27","2018-04-28"]}],
+				"series":[
+					{"name":"珍珠奶茶","type":"line","step":"珍珠奶茶","data":[4,4,8,4]},
+					{"name":"卡布奇洛","type":"line","step":"卡布奇洛","data":[6,4,6,6]},
+					{"name":"伏特加","type":"line","step":"伏特加","data":[8,8,8,6]}],
+					"success":true,
+					"legendData":["珍珠奶茶","卡布奇洛","伏特加"]
+				};
+		var	option = {
+		    title: {
+		        text: 'Step Line'
+		    },
+		    tooltip: {
+		        trigger: 'axis'
+		    },
+		    legend: { },
+		    grid: {
+		        left: '3%',
+		        right: '4%',
+		        bottom: '3%',
+		        containLabel: true
+		    },
+		    toolbox: {
+		        feature: {
+		            saveAsImage: {}
+		        }
+		    },
+		    xAxis: {},
+		    yAxis: {
+		        type: 'value'
+		    },
+		    series: [
+		    ]
+		};
+		return option;
+	}
+});

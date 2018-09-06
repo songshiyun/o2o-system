@@ -1,0 +1,18 @@
+$(function(){
+	var awarId=  getQueryString('awardId');
+	var productUrl = '/o2o/frontend/listAwarddetailpageinfo?awardId='
+		+ awarId;
+	
+	$.getJSON(productUrl,function(data){
+		//返回的award对象信息
+		var award = data.award;
+		// 商品缩略图
+		$('#product-img').attr('src', award.awardImg);
+		// 商品更新时间
+		$('#product-time').text(
+				new Date(award.lastEditTime).Format("yyyy-MM-dd"));
+		 if (product.point != undefined) {
+		 $('#product-point').text('购买可得' + award.point + '积分');
+		 }
+	});
+});

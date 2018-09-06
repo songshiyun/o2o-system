@@ -1,0 +1,12 @@
+package com.song.o2o.dto.echarts;
+
+public class PieChoughSeries {
+	private String name="商品名稱";
+	private String type="pie";
+	private String [] radius={"50%","70%"};
+	private int value;
+
+	private static class normal{
+		
+	}
+}

@@ -1,0 +1,13 @@
+$(function(){
+	
+	function generateStaticEchartPart(){
+		option = {
+			    angleAxis: {},
+			    radiusAxis: {  
+			    },
+			    polar: {},
+			    series: [],
+			    legend: { }
+			};
+	}
+});

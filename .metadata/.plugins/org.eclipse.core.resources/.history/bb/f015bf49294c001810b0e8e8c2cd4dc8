@@ -1,0 +1,5 @@
+package com.song.o2o.web.shopadmin;
+
+public class UserShopManagementController {
+
+}

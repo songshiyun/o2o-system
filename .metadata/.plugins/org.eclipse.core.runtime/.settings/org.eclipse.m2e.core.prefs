@@ -1,0 +1,5 @@
+eclipse.m2.defaultRuntime=apache-tomcat-8.5.4
+eclipse.m2.runtimes=apache-tomcat-8.5.4
+eclipse.m2.runtimesNodes/apache-tomcat-8.5.4/location=D\:\\Software\\apache-maven-3.3.9
+eclipse.m2.runtimesNodes/apache-tomcat-8.5.4/type=EXTERNAL
+eclipse.preferences.version=1

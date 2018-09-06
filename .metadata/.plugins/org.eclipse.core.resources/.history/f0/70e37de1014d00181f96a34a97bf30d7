@@ -1,0 +1,49 @@
+package com.song.o2o.dto.echarts;
+
+public class PieChoughSeries {
+	private String name="商品名稱";
+	private String type="pie";
+	private String [] radius={"50%","70%"};
+	private boolean avoidLabelOverlap=false;
+	private Lebel lebel = new Lebel();
+	
+
+	
+	private static class Label{
+		private Normal normal=new Normal();
+		private Emphasis emphasis= new Emphasis();
+		public Normal getNormal() {
+			return normal;
+		}
+		public Emphasis getEmphasis() {
+			return emphasis;
+		}
+		
+	}
+	private static class Normal{
+		private boolean show=false;
+		private String position ="center";
+		public boolean isShow() {
+			return show;
+		}
+		public String getPosition() {
+			return position;
+		}
+	}
+	private static class Emphasis{
+		private boolean show = true;
+		private TextStyle textStyle=new TextStyle();
+		
+	}
+	private static class TextStyle{
+		private String fontSize="30";
+        private String fontWeight="bold";
+		public String getFontSize() {
+			return fontSize;
+		}
+		public String getFontWeight() {
+			return fontWeight;
+		}
+        
+	}
+}

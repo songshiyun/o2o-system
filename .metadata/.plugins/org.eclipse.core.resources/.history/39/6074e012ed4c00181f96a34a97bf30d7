@@ -1,0 +1,73 @@
+$(function() {
+	getProductSellDailyList();
+	function getProductSellDailyList() {
+		// 获取该店铺商品7天销量的URL
+		var listProductSellDailyUrl = '/o2o/shopadmin/awardsteplineinfo';
+		// 访问后台，该店铺商品7天销量的URL
+		$.getJSON(listProductSellDailyUrl, function(data) {
+			if (data.success) {
+				var myChart = echarts.init(document.getElementById('container'));
+				// 生成静态的Echart信息的部分
+				var option = generateStaticEchartPart();
+				// 遍历销量统计列表,动态设定echarts的值
+				option.legend.data=data.legendData;
+				option.radiusAxis=data.xAxis;
+				option.series = data.series;
+				myChart.setOption(option);
+			}
+		});
+	}
+	
+	function generateStaticEchartPart(){
+	var	option = {
+		    title: {
+		        text: 'Step Line'
+		    },
+		    tooltip: {
+		        trigger: 'axis'
+		    },
+		    legend: {
+		        data:['Step Start', 'Step Middle', 'Step End']
+		    },
+		    grid: {
+		        left: '3%',
+		        right: '4%',
+		        bottom: '3%',
+		        containLabel: true
+		    },
+		    toolbox: {
+		        feature: {
+		            saveAsImage: {}
+		        }
+		    },
+		    xAxis: {
+		        type: 'category',
+		        data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+		    },
+		    yAxis: {
+		        type: 'value'
+		    },
+		    series: [
+		        {
+		            name:'Step Start',
+		            type:'line',
+		            step: 'start',
+		            data:[120, 132, 101, 134, 90, 230, 210]
+		        },
+		        {
+		            name:'Step Middle',
+		            type:'line',
+		            step: 'middle',
+		            data:[220, 282, 201, 234, 290, 430, 410]
+		        },
+		        {
+		            name:'Step End',
+		            type:'line',
+		            step: 'end',
+		            data:[450, 432, 401, 454, 590, 530, 510]
+		        }
+		    ]
+		};
+		return option;
+		}
+});

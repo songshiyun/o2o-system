@@ -1,0 +1,5 @@
+package com.song.o2o.enums;
+
+public class UserAwardMapStateEnum {
+
+}

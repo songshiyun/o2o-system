@@ -1,0 +1,8 @@
+package com.song.o2o.service;
+
+public class ProductSellDailyService {
+
+	/**
+	 * 每日定时统计所有店铺的商品销量
+	 */
+}

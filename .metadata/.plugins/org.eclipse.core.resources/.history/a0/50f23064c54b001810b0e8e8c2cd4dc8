@@ -1,0 +1,13 @@
+package com.song.o2o.service.impl;
+
+import com.song.o2o.service.ProductSellDailyService;
+
+public class ProductSellDailyServiceImpl implements ProductSellDailyService{
+
+	@Override
+	public void dailyCalculate() {
+		// TODO Auto-generated method stub
+		System.out.println("Quartz跑起来了");
+	}
+
+}

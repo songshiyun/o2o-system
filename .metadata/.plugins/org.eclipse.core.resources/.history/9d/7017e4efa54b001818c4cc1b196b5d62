@@ -1,0 +1,7 @@
+package com.song.o2o.dao;
+
+import com.song.o2o.BaseTest;
+
+public class UserAwardMapDaoTest extends BaseTest{
+
+}

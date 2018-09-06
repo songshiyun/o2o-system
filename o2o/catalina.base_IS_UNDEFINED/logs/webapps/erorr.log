@@ -1,0 +1,2 @@
+2018-03-22 11:30:22.310 [main] ERROR com.song.o2o.util.ImageUtil - javax.imageio.IIOException: Can't read input file!
+2018-03-22 11:34:33.796 [main] ERROR com.song.o2o.util.ImageUtil - javax.imageio.IIOException: Can't read input file!

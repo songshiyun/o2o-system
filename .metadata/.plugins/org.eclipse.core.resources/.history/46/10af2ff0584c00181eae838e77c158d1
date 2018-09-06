@@ -1,0 +1,5 @@
+package com.song.o2o.service;
+
+public class UserAwardMapService {
+
+}

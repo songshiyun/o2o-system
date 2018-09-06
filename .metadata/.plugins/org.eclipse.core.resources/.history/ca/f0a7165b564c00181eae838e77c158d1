@@ -1,0 +1,10 @@
+$(function(){
+	var awarId=  getQueryString('awardId');
+	var productUrl = '/o2o/frontend/listAwarddetailpageinfo?awardId='
+		+ awarId;
+	
+	$.getJSON(productUrl,function(data){
+		//返回的award对象信息
+		var award = data.award;
+	});
+});
